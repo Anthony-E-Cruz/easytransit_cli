@@ -14,7 +14,14 @@ console.log(
 
 const run = async () => {
   const user = await login.askLoginCredentials();
-  console.log(`Welcome ${user.username}!`);
+  console.log(
+    chalk.blue(
+      figlet.textSync(`Welcome ${user.username}!`, { 
+        horizontalLayout: 'default',
+        width: 50
+      })
+    )
+  );
   await main.menu()
 };
 
